@@ -3,13 +3,16 @@ import '../styles/App.scss';
 import getDataApi from '../services/api';
 // import { Link, Route, Routes } from 'react-router-dom';
 import CharacterList from './characters/CharacterList';
+import defaultImage from '../images/defaultImage.png';
 
 function App() {
   const [dataCharacters, setDataCharacters] = useState([]);
 
   useEffect(() => {
     getDataApi().then((dataApi) => {
-      console.log(dataApi);
+      if ((dataApi.image = '')) {
+        dataApi.image = { defaultImage };
+      }
       setDataCharacters(dataApi);
     });
   }, []);
