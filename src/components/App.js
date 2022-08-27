@@ -11,6 +11,7 @@ function App() {
   const [dataCharacters, setDataCharacters] = useState([]);
 
   const [filterName, setFilterName] = useState(ls.get('filterNameLS', ''));
+  const [filterHouse, setFilterHouse] = useState('Gryffindor');
 
   // API
   useEffect(() => {
@@ -28,15 +29,21 @@ function App() {
   const handleFilterByName = (value) => {
     setFilterName(value);
   };
-
+  const handleFilterByHouse = (value) => {
+    setFilterHouse(value);
+  };
   // Otras funciones
   const getInputName = () => {
     return filterName;
   };
   // FILTRAR y datos filtrados para pintar
-  const charactersFilters = dataCharacters.filter((character) => {
-    return character.name.toLowerCase().includes(filterName.toLowerCase());
-  });
+  const charactersFilters = dataCharacters
+    .filter((character) => {
+      return character.name.toLowerCase().includes(filterName.toLowerCase());
+    })
+    .filter((character) => {
+      return character.house === filterHouse;
+    });
 
   return (
     <>
@@ -47,6 +54,8 @@ function App() {
         <Filters
           filterName={filterName}
           handleFilterByName={handleFilterByName}
+          filterHouse={filterHouse}
+          handleFilterByHouse={handleFilterByHouse}
         />
         <CharacterList
           charactersFilters={charactersFilters}
