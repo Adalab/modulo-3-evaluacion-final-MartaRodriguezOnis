@@ -6,14 +6,13 @@ const CharacterCard = (props) => {
   };
   return (
     <li className="character-item">
-      <div className="character-item__imgContainer">
-        <img
-          className="character-img"
-          src={changeImage(props.character.image)}
-          alt={`Foto de ${props.character.name}`}
-          title={`Foto de ${props.character.name}`}
-        ></img>
-      </div>
+      <img
+        className="character-item__img"
+        src={changeImage(props.character.image)}
+        alt={`Foto de ${props.character.name}`}
+        title={`Foto de ${props.character.name}`}
+      ></img>
+
       <h4 className="character-item__name">{props.character.name}</h4>
       <p className="character-item__species">{`${props.character.species}`}</p>
     </li>
