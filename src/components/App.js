@@ -15,22 +15,23 @@ function App() {
   const [filterHouse, setFilterHouse] = useState(
     ls.get('filterHouseLS', 'Gryffindor')
   );
+  const [detailURL, setDetailURL] = useState(ls.get('detailURL_LS', {}));
 
   // ver atributos
-  const allSpecies = [
-    ...new Set(dataCharacters.map((character) => character.species)),
-  ];
-  console.log(allSpecies);
+  // const allSpecies = [
+  //   ...new Set(dataCharacters.map((character) => character.species)),
+  // ];
+  // console.log(allSpecies);
 
-  const allGender = [
-    ...new Set(dataCharacters.map((character) => character.gender)),
-  ];
-  console.log(allGender);
+  // const allGender = [
+  //   ...new Set(dataCharacters.map((character) => character.gender)),
+  // ];
+  // console.log(allGender);
 
-  const allStatus = [
-    ...new Set(dataCharacters.map((character) => character.alive)),
-  ];
-  console.log(allStatus);
+  // const allStatus = [
+  //   ...new Set(dataCharacters.map((character) => character.alive)),
+  // ];
+  // console.log(allStatus);
 
   // API
   useEffect(() => {
@@ -43,7 +44,8 @@ function App() {
   useEffect(() => {
     ls.set('filterNameLS', filterName);
     ls.set('filterHouseLS', filterHouse);
-  }, [filterName, filterHouse]);
+    ls.set('detailURL_LS', detailURL);
+  }, [filterName, filterHouse, detailURL]);
 
   // MANEJADORAS  EVENTOS
   const handleFilterByName = (value) => {
@@ -51,6 +53,10 @@ function App() {
   };
   const handleFilterByHouse = (value) => {
     setFilterHouse(value);
+  };
+
+  const handleDetailURL = (value) => {
+    setDetailURL(value);
   };
   // Otras funciones
   const getInputName = () => {
@@ -104,13 +110,20 @@ function App() {
                 <CharacterList
                   charactersFilters={charactersFilters}
                   getInputName={getInputName()}
+                  detailURL={detailURL}
+                  handleDetailURL={handleDetailURL}
                 />
               </>
             }
           />
           <Route
             path="/character/:characterId"
-            element={<CharacterDetail characterFound={characterFound} />}
+            element={
+              <CharacterDetail
+                characterFound={characterFound}
+                detailURL={detailURL}
+              />
+            }
           />
         </Routes>
       </main>

@@ -3,12 +3,19 @@ import defaultImage from '../../images/defaultImage.png';
 import { Link } from 'react-router-dom';
 
 const CharacterCard = (props) => {
+  const handleLink = (ev) => {
+    // ev.preventDefault();
+    console.log(ev.currentTarget.href);
+    console.log(window.location);
+    props.handleDetailURL(window.location);
+  };
   const changeImage = (img) => {
     return img === '' ? defaultImage : props.character.image;
   };
+
   return (
     <li className="character-item" id={props.character.id}>
-      <Link to={`/character/${props.character.id}`}>
+      <Link to={`character/${props.character.id}`} onClick={handleLink}>
         <img
           className="character-item__img"
           src={changeImage(props.character.image)}

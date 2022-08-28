@@ -7,6 +7,8 @@ import HouseHufflepuff from '../../images/HouseHufflepuff.jpg';
 import '../../styles/CharacterDetail.scss';
 
 const CharacterDetail = (props) => {
+  // window.location.href = `${props.detailURL.href}`;
+  console.log(props.detailURL.href);
   const getHouse = (value) => {
     if (value === 'Gryffindor') {
       return HouseGryffindor;
