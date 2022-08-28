@@ -1,13 +1,14 @@
 import '../../styles/CharacterCard.scss';
 import defaultImage from '../../images/defaultImage.png';
 import { Link } from 'react-router-dom';
+
 const CharacterCard = (props) => {
   const changeImage = (img) => {
     return img === '' ? defaultImage : props.character.image;
   };
   return (
-    <li className="character-item">
-      <Link to={`/character/${props.character.name}`}>
+    <li className="character-item" id={props.character.id}>
+      <Link to={`/character/${props.character.id}`}>
         <img
           className="character-item__img"
           src={changeImage(props.character.image)}

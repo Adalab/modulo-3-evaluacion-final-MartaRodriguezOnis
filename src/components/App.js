@@ -12,7 +12,25 @@ function App() {
   // VARIABLES DE ESTADO
   const [dataCharacters, setDataCharacters] = useState([]);
   const [filterName, setFilterName] = useState(ls.get('filterNameLS', ''));
-  const [filterHouse, setFilterHouse] = useState('Gryffindor');
+  const [filterHouse, setFilterHouse] = useState(
+    ls.get('filterHouseLS', 'Gryffindor')
+  );
+
+  // ver atributos
+  const allSpecies = [
+    ...new Set(dataCharacters.map((character) => character.species)),
+  ];
+  console.log(allSpecies);
+
+  const allGender = [
+    ...new Set(dataCharacters.map((character) => character.gender)),
+  ];
+  console.log(allGender);
+
+  const allStatus = [
+    ...new Set(dataCharacters.map((character) => character.alive)),
+  ];
+  console.log(allStatus);
 
   // API
   useEffect(() => {
@@ -24,7 +42,8 @@ function App() {
   // LOCAL-STORAGE
   useEffect(() => {
     ls.set('filterNameLS', filterName);
-  }, [filterName]);
+    ls.set('filterHouseLS', filterHouse);
+  }, [filterName, filterHouse]);
 
   // MANEJADORAS  EVENTOS
   const handleFilterByName = (value) => {
@@ -37,6 +56,7 @@ function App() {
   const getInputName = () => {
     return filterName;
   };
+
   // FILTRAR y datos filtrados para pintar
   const charactersFilters = dataCharacters
     .filter((character) => {
@@ -46,14 +66,22 @@ function App() {
       return character.house === filterHouse;
     });
 
-  //obtener el NAME del usuario  (No hay id)
-  const { pathname } = useLocation();
-  const dataPath = matchPath('/character/:characterName', pathname);
+  // obtener el NAME del usuario  (No hay id)
+  // const { pathname } = useLocation();
+  // const dataPath = matchPath('/character/:characterName', pathname);
 
-  const characterName =
-    dataPath !== null ? dataPath.params.characterName : null;
-  const characterFound = charactersFilters.find((character) => {
-    return character.name === characterName;
+  // const characterName =
+  //   dataPath !== null ? dataPath.params.characterName : null;
+  // const characterFound = charactersFilters.find((character) => {
+  //   return character.name === characterName;
+  // });
+
+  const { pathname } = useLocation();
+  const dataPath = matchPath('/character/:characterId', pathname);
+
+  const characterId = dataPath !== null ? dataPath.params.characterId : null;
+  const characterFound = dataCharacters.find((character) => {
+    return character.id === parseInt(characterId);
   });
 
   return (
@@ -81,7 +109,7 @@ function App() {
             }
           />
           <Route
-            path="/character/:characterName"
+            path="/character/:characterId"
             element={<CharacterDetail characterFound={characterFound} />}
           />
         </Routes>
