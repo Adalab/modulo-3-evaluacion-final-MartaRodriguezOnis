@@ -8,7 +8,7 @@ const FilterByGender = (props) => {
         Género:
       </label>
       <select
-        className="form__gender-label"
+        className="form__gender-select"
         name="gender"
         id="gender"
         value={props.filterGender}

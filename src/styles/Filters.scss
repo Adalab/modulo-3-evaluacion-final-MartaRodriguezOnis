@@ -5,8 +5,77 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 70px;
   @media all and (min-width: 768px) {
     flex-direction: row;
-    margin-top: 50px;
+    margin-top: 70px;
+  }
+  &__name-label {
+    width: 290px;
+    margin-bottom: 20px;
+    padding: 10px;
+    color: rgb(250, 248, 248);
+    background-color: $colorGryffindor;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+  }
+  &__name-input {
+    width: 290px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    border: 3px solid $colorGryffindor;
+    margin-bottom: 20px;
+  }
+  &__house-label {
+    width: 290px;
+    margin-bottom: 20px;
+    padding: 10px;
+    color: rgb(250, 248, 248);
+    background-color: $colorSlytherin;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+  }
+  &__house-select {
+    width: 290px;
+    padding: 10px;
+    color: $colorSlytherin;
+    border-radius: 10px;
+    font-size: 18px;
+    border: 3px solid $colorSlytherin;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  &__gender-label {
+    width: 290px;
+    margin-bottom: 20px;
+    padding: 10px;
+    color: rgb(250, 248, 248);
+    background-color: $colorHufflepuff;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+  }
+  &__gender-select {
+    width: 290px;
+    padding: 10px;
+    color: $colorHufflepuff;
+    border-radius: 10px;
+    font-size: 18px;
+    border: 3px solid $colorHufflepuff;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  &__reset_btn {
+    width: 250px;
+    margin-bottom: 20px;
+    padding: 15px;
+    color: rgb(250, 248, 248);
+    background-color: $colorRavenclaw;
+    border-radius: 20px;
+    font-size: 18px;
+    text-align: center;
   }
 }
