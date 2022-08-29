@@ -1,5 +1,6 @@
 import CharacterCard from './CharacterCard';
 import '../../styles/CharacterList.scss';
+import wand from '../../images/wand.png';
 
 const CharacterList = (props) => {
   const renderCharacters = () => {
@@ -36,7 +37,16 @@ const CharacterList = (props) => {
   };
   return (
     <section>
-      <ul className="character-list">{renderCharacters()}</ul>
+      <>
+        <img
+          className="section-img"
+          src={wand}
+          alt="Icono varita mágica"
+          title="Icono varita mágica"
+        ></img>
+        <p className="paragraph-section">ACCIO PERSONAJES!!</p>
+        <ul className="character-list">{renderCharacters()}</ul>
+      </>
     </section>
   );
 };

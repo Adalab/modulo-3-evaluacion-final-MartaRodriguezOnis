@@ -8,7 +8,11 @@ const CharacterCard = (props) => {
 
   return (
     <li className="character-item" id={props.character.id}>
-      <Link to={`character/${props.character.id}`} onClick={handleLink}>
+      <Link
+        to={`character/${props.character.id}`}
+        className="character-link"
+        onClick={handleLink}
+      >
         <img
           className="character-item__img"
           src={props.changeImage(props.character.image)}

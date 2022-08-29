@@ -1,4 +1,32 @@
+.section-img {
+  width: 150px;
+  position: relative;
+  left: 28px;
+  top: -10px;
+  padding-top: 10px;
+  transform: rotate(-10deg);
+  @media all and (min-width: 768px) {
+    left: 180px;
+  }
+}
+.paragraph-section {
+  width: fit-content;
+  position: relative;
+  color: black;
+  border-radius: 10px;
+  padding: 3px;
+  font-size: 22px;
+  text-align: center;
+  text-transform: capitalize;
+
+  z-index: -1;
+  top: -100px;
+  left: 100px;
+  transform: rotate(10deg);
+}
 .character-list {
+  list-style: none;
+  text-decoration: none;
   height: 100%;
   display: grid;
   grid-template-columns: 1fr;
@@ -6,4 +34,8 @@
   @media all and (min-width: 768px) {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
+}
+.character-link {
+  text-decoration: none;
+  color: black;
 }

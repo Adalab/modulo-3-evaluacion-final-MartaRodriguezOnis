@@ -1,6 +1,5 @@
 @import './App';
 .form {
-  font-family: $font-main;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,6 +7,7 @@
   margin-top: 70px;
   @media all and (min-width: 768px) {
     flex-direction: row;
+    flex-wrap: wrap;
     margin-top: 70px;
   }
   &__name-label {
@@ -19,6 +19,10 @@
     border-radius: 10px;
     font-size: 18px;
     text-align: center;
+    box-shadow: 0 5px 5px rgb(129, 129, 129);
+    @media all and (min-width: 768px) {
+      margin-right: 20px;
+    }
   }
   &__name-input {
     width: 290px;
@@ -27,6 +31,10 @@
     font-size: 18px;
     border: 3px solid $colorGryffindor;
     margin-bottom: 20px;
+    box-shadow: 0 5px 5px rgb(129, 129, 129);
+    @media all and (min-width: 768px) {
+      margin-right: 40px;
+    }
   }
   &__house-label {
     width: 290px;
@@ -37,6 +45,10 @@
     border-radius: 10px;
     font-size: 18px;
     text-align: center;
+    box-shadow: 0 5px 5px rgb(129, 129, 129);
+    @media all and (min-width: 768px) {
+      margin-right: 20px;
+    }
   }
   &__house-select {
     width: 290px;
@@ -47,6 +59,10 @@
     border: 3px solid $colorSlytherin;
     text-align: center;
     margin-bottom: 20px;
+    box-shadow: 0 5px 5px rgb(129, 129, 129);
+    @media all and (min-width: 768px) {
+      margin-right: 40px;
+    }
   }
   &__gender-label {
     width: 290px;
@@ -57,6 +73,10 @@
     border-radius: 10px;
     font-size: 18px;
     text-align: center;
+    box-shadow: 0 5px 5px rgb(129, 129, 129);
+    @media all and (min-width: 768px) {
+      margin-right: 20px;
+    }
   }
   &__gender-select {
     width: 290px;
@@ -67,15 +87,23 @@
     border: 3px solid $colorHufflepuff;
     text-align: center;
     margin-bottom: 20px;
+    box-shadow: 0 5px 5px rgb(129, 129, 129);
+    @media all and (min-width: 768px) {
+      margin-right: 50px;
+    }
   }
   &__reset_btn {
     width: 250px;
     margin-bottom: 20px;
-    padding: 15px;
+    padding: 20px;
     color: rgb(250, 248, 248);
     background-color: $colorRavenclaw;
     border-radius: 20px;
-    font-size: 18px;
+    font-size: 22px;
     text-align: center;
+    box-shadow: 0 10px 10px hsl(0, 0%, 3%);
+    @media all and (min-width: 768px) {
+      margin-right: 40px;
+    }
   }
 }

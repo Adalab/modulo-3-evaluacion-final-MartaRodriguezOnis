@@ -12,4 +12,8 @@ $colorRavenclaw: #1f3149;
 $colorHufflepuff: #845f18;
 
 // FUENTES
-$font-main: 'Bree Serif', serif; ;
+$font-main: 'Bree Serif', serif;
+
+.main {
+  font-family: $font-main;
+}
