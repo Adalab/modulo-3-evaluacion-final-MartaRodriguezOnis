@@ -1,13 +1,9 @@
 import '../../styles/CharacterCard.scss';
-import defaultImage from '../../images/defaultImage.png';
 import { Link } from 'react-router-dom';
 
 const CharacterCard = (props) => {
   const handleLink = (ev) => {
     props.handleDetailURL(window.location);
-  };
-  const changeImage = (img) => {
-    return img === '' ? defaultImage : props.character.image;
   };
 
   return (
@@ -15,7 +11,7 @@ const CharacterCard = (props) => {
       <Link to={`character/${props.character.id}`} onClick={handleLink}>
         <img
           className="character-item__img"
-          src={changeImage(props.character.image)}
+          src={props.changeImage(props.character.image)}
           alt={`Foto de ${props.character.name}`}
           title={`Foto de ${props.character.name}`}
         ></img>

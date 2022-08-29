@@ -1,6 +1,8 @@
 import FilterByHouse from './FilterByHouse';
 import FilterByName from './FilterByName';
 import FilterByGender from './FilterByGender';
+import ResetButton from '../ResetButton';
+import '../../styles/Filters.scss';
 
 const Filters = (props) => {
   const handleSubmit = (ev) => {
@@ -19,6 +21,12 @@ const Filters = (props) => {
       <FilterByGender
         filterGender={props.filterGender}
         handleFilterByGender={props.handleFilterByGender}
+      />
+      <ResetButton
+        handleFilterByName={props.handleFilterByName}
+        handleFilterByHouse={props.handleFilterByHouse}
+        handleFilterByGender={props.handleFilterByGender}
+        handleDetailURL={props.handleDetailURL}
       />
     </form>
   );

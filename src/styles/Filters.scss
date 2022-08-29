@@ -1,0 +1,12 @@
+@import './App';
+.form {
+  font-family: $font-main;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media all and (min-width: 768px) {
+    flex-direction: row;
+    margin-top: 50px;
+  }
+}

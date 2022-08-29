@@ -7,7 +7,9 @@ import CharacterList from './characters/CharacterList';
 import Filters from './filters/Filters';
 import '../styles/App.scss';
 import CharacterDetail from './characters/CharacterDetail';
-import ResetButton from './ResetButton';
+import '../styles/App.scss';
+import defaultImage from '../images/defaultImage.png';
+import Header from './Header';
 
 function App() {
   // VARIABLES DE ESTADO
@@ -67,6 +69,10 @@ function App() {
     return filterName;
   };
 
+  const changeImage = (img) => {
+    return img === '' ? defaultImage : img;
+  };
+
   // FILTRAR y datos filtrados para pintar
   const charactersFilters = dataCharacters
     .filter((character) => {
@@ -101,10 +107,8 @@ function App() {
   console.log(characterFound);
   return (
     <>
-      <header className="header">
-        <h1 className="header__title">Harry Potter</h1>
-      </header>
-      <main>
+      <Header />
+      <main className="main">
         <Routes>
           <Route
             path="/"
@@ -117,18 +121,15 @@ function App() {
                   handleFilterByHouse={handleFilterByHouse}
                   filterGender={filterGender}
                   handleFilterByGender={handleFilterByGender}
-                />
-                <ResetButton
-                  handleFilterByName={handleFilterByName}
-                  handleFilterByHouse={handleFilterByHouse}
-                  handleFilterByGender={handleFilterByGender}
                   handleDetailURL={handleDetailURL}
                 />
+
                 <CharacterList
                   charactersFilters={charactersFilters}
                   getInputName={getInputName()}
                   detailURL={detailURL}
                   handleDetailURL={handleDetailURL}
+                  changeImage={changeImage}
                 />
               </>
             }
@@ -138,6 +139,7 @@ function App() {
             element={
               <CharacterDetail
                 characterFound={characterFound}
+                changeImage={changeImage}
                 detailURL={detailURL}
               />
             }

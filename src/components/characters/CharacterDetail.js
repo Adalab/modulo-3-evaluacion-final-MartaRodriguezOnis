@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import defaultImage from '../../images/defaultImage.png';
+
 import HouseGryffindor from '../../images/HouseGryffindor.jpg';
 import HouseSlytherin from '../../images/HouseSlytherin.jpg';
 import HouseRavenclaw from '../../images/HouseRavenclaw.jpg';
@@ -38,9 +38,6 @@ const CharacterDetail = (props) => {
     }
   };
 
-  const changeImage = (img) => {
-    return img === '' ? defaultImage : props.characterFound.image;
-  };
   const translateSpecies = (specie) => {
     if (specie === 'human') {
       return 'Humano';
@@ -87,7 +84,7 @@ const CharacterDetail = (props) => {
         <div className="detailSection__contImg">
           <img
             className="detailSection-img"
-            src={changeImage(props.characterFound.image)}
+            src={props.changeImage(props.characterFound.image)}
             alt={`Foto de ${props.characterFound.name}`}
             title={`Foto de ${props.characterFound.name}`}
           ></img>

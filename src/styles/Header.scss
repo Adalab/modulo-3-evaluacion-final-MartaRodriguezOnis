@@ -1,0 +1,37 @@
+@import './App';
+.header {
+  margin-top: 40px;
+  margin-bottom: 25px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__hat {
+    position: fixed;
+    z-index: -1;
+    width: 110px;
+    padding-top: 30px;
+    @media all and (min-width: 768px) {
+      position: relative;
+      display: inline;
+      width: 130px;
+      padding-right: 30px;
+    }
+  }
+  &__title {
+    font-size: 15px;
+    font-family: $font-main;
+    text-transform: uppercase;
+    padding-right: 7px;
+    @media all and (min-width: 768px) {
+      font-size: 35px;
+      padding-right: 10px;
+    }
+  }
+  &__logo {
+    width: 100px;
+    @media all and (min-width: 768px) {
+      width: 200px;
+    }
+  }
+}

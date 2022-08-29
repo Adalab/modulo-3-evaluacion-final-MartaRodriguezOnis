@@ -21,6 +21,7 @@ const CharacterList = (props) => {
               key={index}
               detailURL={props.detailURL}
               handleDetailURL={props.handleDetailURL}
+              changeImage={props.changeImage}
             />
           );
         });

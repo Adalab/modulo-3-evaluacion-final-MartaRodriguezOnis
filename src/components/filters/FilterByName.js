@@ -6,7 +6,7 @@ const FilterByName = (props) => {
   return (
     <>
       <label htmlFor="name" className="form__name-label">
-        Busca por personaje
+        Busca por nombre o apellido:
       </label>
       <input
         type="text"
@@ -16,7 +16,7 @@ const FilterByName = (props) => {
         id="name"
         value={props.filterName}
         onChange={handleChange}
-        placeholder="Por ej: Lucius Malfoy"
+        placeholder=" Ej: Lucius Malfoy"
       ></input>
     </>
   );
