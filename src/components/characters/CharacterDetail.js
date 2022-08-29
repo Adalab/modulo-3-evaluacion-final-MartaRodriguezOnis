@@ -8,8 +8,6 @@ import Houseless from '../../images/Houseless.jpg';
 import '../../styles/CharacterDetail.scss';
 
 const CharacterDetail = (props) => {
-  // window.location.href = `${props.detailURL.href}`;
-  // console.log(props.detailURL.href);
   const getHouse = (value) => {
     if (value === 'Gryffindor') {
       return HouseGryffindor;
@@ -80,7 +78,9 @@ const CharacterDetail = (props) => {
       return 'Semihumano';
     }
   };
-  return (
+  return props.characterFound === undefined ? (
+    <p>El personaje que buscas no existe</p>
+  ) : (
     <>
       <Link to="/">Volver</Link>
       <section className={`section-${props.characterFound.house}`}>

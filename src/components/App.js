@@ -11,12 +11,13 @@ import ResetButton from './ResetButton';
 
 function App() {
   // VARIABLES DE ESTADO
-  const [dataCharacters, setDataCharacters] = useState([]);
+  const [dataCharacters, setDataCharacters] = useState(
+    ls.get('dataCharactersLS', [])
+  );
   const [filterName, setFilterName] = useState(ls.get('filterNameLS', ''));
   const [filterHouse, setFilterHouse] = useState('Gryffindor');
   const [filterGender, setFilterGender] = useState('All');
   const [detailURL, setDetailURL] = useState(ls.get('detailURL_LS', {}));
-  console.log(detailURL);
 
   // ver atributos
   // const allSpecies = [
@@ -43,10 +44,10 @@ function App() {
 
   // LOCAL-STORAGE
   useEffect(() => {
+    ls.set('dataCharactersLS', dataCharacters);
     ls.set('filterNameLS', filterName);
-    // ls.set('filterHouseLS', filterHouse);
     ls.set('detailURL_LS', detailURL);
-  }, [filterName, detailURL]);
+  }, [dataCharacters, filterName, detailURL]);
 
   // MANEJADORAS  EVENTOS
   const handleFilterByName = (value) => {

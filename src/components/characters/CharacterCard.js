@@ -4,9 +4,6 @@ import { Link } from 'react-router-dom';
 
 const CharacterCard = (props) => {
   const handleLink = (ev) => {
-    // ev.preventDefault();
-    console.log(ev.currentTarget.href);
-    console.log(window.location);
     props.handleDetailURL(window.location);
   };
   const changeImage = (img) => {
