@@ -4,11 +4,12 @@ import HouseGryffindor from '../../images/HouseGryffindor.jpg';
 import HouseSlytherin from '../../images/HouseSlytherin.jpg';
 import HouseRavenclaw from '../../images/HouseRavenclaw.jpg';
 import HouseHufflepuff from '../../images/HouseHufflepuff.jpg';
+import Houseless from '../../images/Houseless.jpg';
 import '../../styles/CharacterDetail.scss';
 
 const CharacterDetail = (props) => {
   // window.location.href = `${props.detailURL.href}`;
-  console.log(props.detailURL.href);
+  // console.log(props.detailURL.href);
   const getHouse = (value) => {
     if (value === 'Gryffindor') {
       return HouseGryffindor;
@@ -18,6 +19,8 @@ const CharacterDetail = (props) => {
       return HouseHufflepuff;
     } else if (value === 'Ravenclaw') {
       return HouseRavenclaw;
+    } else {
+      return Houseless;
     }
   };
 
@@ -102,7 +105,11 @@ const CharacterDetail = (props) => {
           }`}
         </p>
         <p className="detailSection__paragraph">
-          Casa:{`${props.characterFound.house}`}
+          {`Género:${
+            props.characterFound.house === ''
+              ? 'Sin Casa'
+              : props.characterFound.house
+          }`}
         </p>
         <img
           className="detailSection__house"

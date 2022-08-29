@@ -7,15 +7,16 @@ import CharacterList from './characters/CharacterList';
 import Filters from './filters/Filters';
 import '../styles/App.scss';
 import CharacterDetail from './characters/CharacterDetail';
+import ResetButton from './ResetButton';
 
 function App() {
   // VARIABLES DE ESTADO
   const [dataCharacters, setDataCharacters] = useState([]);
   const [filterName, setFilterName] = useState(ls.get('filterNameLS', ''));
-  const [filterHouse, setFilterHouse] = useState(
-    ls.get('filterHouseLS', 'Gryffindor')
-  );
+  const [filterHouse, setFilterHouse] = useState('Gryffindor');
+  const [filterGender, setFilterGender] = useState('All');
   const [detailURL, setDetailURL] = useState(ls.get('detailURL_LS', {}));
+  console.log(detailURL);
 
   // ver atributos
   // const allSpecies = [
@@ -43,9 +44,9 @@ function App() {
   // LOCAL-STORAGE
   useEffect(() => {
     ls.set('filterNameLS', filterName);
-    ls.set('filterHouseLS', filterHouse);
+    // ls.set('filterHouseLS', filterHouse);
     ls.set('detailURL_LS', detailURL);
-  }, [filterName, filterHouse, detailURL]);
+  }, [filterName, detailURL]);
 
   // MANEJADORAS  EVENTOS
   const handleFilterByName = (value) => {
@@ -54,7 +55,9 @@ function App() {
   const handleFilterByHouse = (value) => {
     setFilterHouse(value);
   };
-
+  const handleFilterByGender = (value) => {
+    setFilterGender(value);
+  };
   const handleDetailURL = (value) => {
     setDetailURL(value);
   };
@@ -69,7 +72,12 @@ function App() {
       return character.name.toLowerCase().includes(filterName.toLowerCase());
     })
     .filter((character) => {
-      return character.house === filterHouse;
+      return filterHouse === 'Houseless'
+        ? character.house === ''
+        : character.house === filterHouse;
+    })
+    .filter((character) => {
+      return filterGender === 'All' ? true : character.gender === filterGender;
     });
 
   // obtener el NAME del usuario  (No hay id)
@@ -89,7 +97,7 @@ function App() {
   const characterFound = dataCharacters.find((character) => {
     return character.id === parseInt(characterId);
   });
-
+  console.log(characterFound);
   return (
     <>
       <header className="header">
@@ -106,6 +114,14 @@ function App() {
                   handleFilterByName={handleFilterByName}
                   filterHouse={filterHouse}
                   handleFilterByHouse={handleFilterByHouse}
+                  filterGender={filterGender}
+                  handleFilterByGender={handleFilterByGender}
+                />
+                <ResetButton
+                  handleFilterByName={handleFilterByName}
+                  handleFilterByHouse={handleFilterByHouse}
+                  handleFilterByGender={handleFilterByGender}
+                  handleDetailURL={handleDetailURL}
                 />
                 <CharacterList
                   charactersFilters={charactersFilters}

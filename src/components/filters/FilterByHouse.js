@@ -19,6 +19,7 @@ const FilterByHouse = (props) => {
         <option value="Slytherin">Slytherin</option>
         <option value="Hufflepuff">Hufflepuff</option>
         <option value="Ravenclaw">Ravenclaw</option>
+        <option value="Houseless">Sin casa</option>
       </select>
     </>
   );
