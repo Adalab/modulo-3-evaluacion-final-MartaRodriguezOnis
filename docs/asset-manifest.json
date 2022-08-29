@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.da1f9f21.css",
-    "main.js": "./static/js/main.2a54293b.js",
+    "main.js": "./static/js/main.089dfec1.js",
     "static/media/defaultImage.png": "./static/media/defaultImage.caf49d0494891b4b645e.png",
     "static/media/Houseless.jpg": "./static/media/Houseless.0ada4647dfc5fd290004.jpg",
     "static/media/HouseGryffindor.jpg": "./static/media/HouseGryffindor.8c4d6929d7374292c526.jpg",
@@ -10,10 +10,10 @@
     "static/media/HouseHufflepuff.jpg": "./static/media/HouseHufflepuff.9fdbbf559df60723ea24.jpg",
     "index.html": "./index.html",
     "main.da1f9f21.css.map": "./static/css/main.da1f9f21.css.map",
-    "main.2a54293b.js.map": "./static/js/main.2a54293b.js.map"
+    "main.089dfec1.js.map": "./static/js/main.089dfec1.js.map"
   },
   "entrypoints": [
     "static/css/main.da1f9f21.css",
-    "static/js/main.2a54293b.js"
+    "static/js/main.089dfec1.js"
   ]
 }
