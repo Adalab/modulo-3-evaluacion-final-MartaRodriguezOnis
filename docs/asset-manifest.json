@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.c0fe35dd.css",
-    "main.js": "./static/js/main.717c14f7.js",
+    "main.css": "./static/css/main.78fec0ae.css",
+    "main.js": "./static/js/main.9b2bb090.js",
     "static/media/defaultImage.png": "./static/media/defaultImage.caf49d0494891b4b645e.png",
     "static/media/sorting-hat.png": "./static/media/sorting-hat.d751c9d088a677c2238a.png",
     "static/media/Houseless.jpg": "./static/media/Houseless.0ada4647dfc5fd290004.jpg",
@@ -11,11 +11,11 @@
     "static/media/HouseRavenclaw.jpg": "./static/media/HouseRavenclaw.c69639263a923a85bf1f.jpg",
     "static/media/HouseHufflepuff.jpg": "./static/media/HouseHufflepuff.9fdbbf559df60723ea24.jpg",
     "index.html": "./index.html",
-    "main.c0fe35dd.css.map": "./static/css/main.c0fe35dd.css.map",
-    "main.717c14f7.js.map": "./static/js/main.717c14f7.js.map"
+    "main.78fec0ae.css.map": "./static/css/main.78fec0ae.css.map",
+    "main.9b2bb090.js.map": "./static/js/main.9b2bb090.js.map"
   },
   "entrypoints": [
-    "static/css/main.c0fe35dd.css",
-    "static/js/main.717c14f7.js"
+    "static/css/main.78fec0ae.css",
+    "static/js/main.9b2bb090.js"
   ]
 }
