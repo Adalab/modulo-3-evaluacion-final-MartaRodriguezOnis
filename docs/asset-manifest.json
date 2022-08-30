@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "./static/css/main.476cbc64.css",
+    "main.css": "./static/css/main.4cc2c9eb.css",
     "main.js": "./static/js/main.c06a0c15.js",
     "static/media/defaultImage.png": "./static/media/defaultImage.caf49d0494891b4b645e.png",
     "static/media/sorting-hat.png": "./static/media/sorting-hat.d751c9d088a677c2238a.png",
@@ -12,11 +12,11 @@
     "static/media/HouseHufflepuff.jpg": "./static/media/HouseHufflepuff.9fdbbf559df60723ea24.jpg",
     "static/media/wand.png": "./static/media/wand.fb77f8bc674830892933.png",
     "index.html": "./index.html",
-    "main.476cbc64.css.map": "./static/css/main.476cbc64.css.map",
+    "main.4cc2c9eb.css.map": "./static/css/main.4cc2c9eb.css.map",
     "main.c06a0c15.js.map": "./static/js/main.c06a0c15.js.map"
   },
   "entrypoints": [
-    "static/css/main.476cbc64.css",
+    "static/css/main.4cc2c9eb.css",
     "static/js/main.c06a0c15.js"
   ]
 }
