@@ -5,7 +5,7 @@ const FilterByGender = (props) => {
   return (
     <>
       <label className="form__gender-label" htmlFor="gender">
-        Género:
+        O también filtra por género:
       </label>
       <select
         className="form__gender-select"

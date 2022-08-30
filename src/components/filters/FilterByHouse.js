@@ -5,7 +5,7 @@ const FilterByHouse = (props) => {
   return (
     <>
       <label className="form__house-label" htmlFor="house">
-        Selecciona la casa:
+        O selecciona la casa:
       </label>
       <select
         className="form__house-select"
@@ -19,7 +19,7 @@ const FilterByHouse = (props) => {
         <option value="Slytherin">Slytherin</option>
         <option value="Hufflepuff">Hufflepuff</option>
         <option value="Ravenclaw">Ravenclaw</option>
-        <option value="Houseless">Sin casa</option>
+        <option value="Houseless">Resto de personajes</option>
       </select>
     </>
   );

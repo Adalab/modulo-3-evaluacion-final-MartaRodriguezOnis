@@ -29,7 +29,7 @@ const CharacterList = (props) => {
     } else {
       return (
         <section className="notName-message">
-          No hay ningún personaje que coincida con la palabra:
+          No hay ningún personaje que coincida con:
           <p className="notName-message__input"> {props.getInputName}</p>
         </section>
       );
@@ -44,7 +44,7 @@ const CharacterList = (props) => {
           alt="Icono varita mágica"
           title="Icono varita mágica"
         ></img>
-        <p className="paragraph-section">ACCIO PERSONAJES!!</p>
+        <p className="paragraph-section">¡¡ACCIO PERSONAJES!!</p>
         <ul className="character-list">{renderCharacters()}</ul>
       </>
     </section>

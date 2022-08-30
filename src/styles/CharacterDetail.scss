@@ -1,7 +1,49 @@
 @import './App';
-// .detailSection {
-//   background-color: $colorGryffindor;
-// }
+.detailSection {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  @media all and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: center;
+    gap: 100px;
+  }
+  &__img {
+    width: 230px;
+    height: 320px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 6px;
+    margin-top: 50px;
+    border: 7px solid black;
+    @media all and (min-width: 768px) {
+      margin-bottom: 100px;
+      margin-top: 100px;
+    }
+  }
+  &__name {
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    @media all and (min-width: 768px) {
+      font-size: 30px;
+    }
+  }
+  &__paragraph {
+    color: white;
+    margin-bottom: 5px;
+    @media all and (min-width: 768px) {
+      font-size: 24px;
+    }
+  }
+  &__house {
+    width: 50px;
+    margin-top: 20px;
+    object-fit: cover;
+  }
+}
 
 .section-Gryffindor {
   background-color: $colorGryffindor;
@@ -17,4 +59,24 @@
 }
 .section- {
   background-color: gray;
+}
+.SectionDetail-link {
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+  padding: 20px;
+  @media all and (min-width: 768px) {
+    font-size: 34px;
+    margin-left: 40px;
+  }
+}
+.characterNot-found {
+  text-align: center;
+  font-size: 24px;
+  color: red;
+  margin-bottom: 50px;
+  margin-top: 60px;
+  @media all and (min-width: 768px) {
+    font-size: 30px;
+  }
 }

@@ -14,7 +14,7 @@ const CharacterCard = (props) => {
         onClick={handleLink}
       >
         <img
-          className="character-item__img"
+          className={`character-item__img character-item__${props.character.house}`}
           src={props.changeImage(props.character.image)}
           alt={`Foto de ${props.character.name}`}
           title={`Foto de ${props.character.name}`}

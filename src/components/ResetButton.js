@@ -8,7 +8,7 @@ const ResetButton = (props) => {
   };
   return (
     <button className="form__reset_btn" onClick={handleReset}>
-      Reset
+      AVADA KEDAVRA!
     </button>
   );
 };

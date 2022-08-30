@@ -1,28 +1,32 @@
+@import './App';
 .section-img {
-  width: 150px;
-  position: relative;
-  left: 28px;
-  top: -10px;
-  padding-top: 10px;
-  transform: rotate(-10deg);
+  display: none;
   @media all and (min-width: 768px) {
-    left: 180px;
+    display: inline-block;
+    left: 400px;
+    top: -10px;
+    position: relative;
   }
 }
 .paragraph-section {
-  width: fit-content;
   position: relative;
-  color: black;
-  border-radius: 10px;
+
+  width: 100%;
+  color: rgb(4, 4, 4);
   padding: 3px;
   font-size: 22px;
   text-align: center;
   text-transform: capitalize;
+  margin-bottom: 20px;
+  margin-top: 20px;
 
-  z-index: -1;
-  top: -100px;
-  left: 100px;
-  transform: rotate(10deg);
+  @media all and (min-width: 768px) {
+    font-size: 28px;
+    margin-bottom: -80px;
+    position: relative;
+    transform: rotate(10deg);
+    top: -160px;
+  }
 }
 .character-list {
   list-style: none;
@@ -35,7 +39,24 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 }
-.character-link {
-  text-decoration: none;
-  color: black;
+
+.notName-message {
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 22px;
+  text-align: center;
+  @media all and (min-width: 768px) {
+    width: 100vw;
+    font-size: 32px;
+  }
+  &__input {
+    font-size: 36px;
+    line-height: 40px;
+    color: $colorSlytherin;
+    height: 40px;
+    text-shadow: none;
+    color: $colorSlytherin;
+    text-shadow: -3px 3px #ffffff, -3px -3px #ffffff, 3px -3px #ffffff,
+      3px 3px #f3f3f2, 6px 6px #151515;
+  }
 }

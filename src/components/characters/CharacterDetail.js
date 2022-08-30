@@ -76,46 +76,55 @@ const CharacterDetail = (props) => {
     }
   };
   return props.characterFound === undefined ? (
-    <p>El personaje que buscas no existe</p>
+    <>
+      <p className="characterNot-found">El personaje que buscas no existe</p>
+      <Link to="/" className="SectionDetail-link">
+        Volver
+      </Link>
+    </>
   ) : (
     <>
-      <Link to="/">Volver</Link>
-      <section className={`section-${props.characterFound.house}`}>
-        <div className="detailSection__contImg">
+      <Link to="/" className="SectionDetail-link">
+        Volver
+      </Link>
+      <section
+        className={`detailSection section-${props.characterFound.house}`}
+      >
+        <img
+          className="detailSection__img"
+          src={props.changeImage(props.characterFound.image)}
+          alt={`Foto de ${props.characterFound.name}`}
+          title={`Foto de ${props.characterFound.name}`}
+        ></img>
+
+        <div className="detailSection__cont">
+          <h4 className="detailSection__name">{props.characterFound.name}</h4>
+          <p className="detailSection__paragraph">
+            Estatus: {deadOrAlive(props.characterFound.alive)}
+          </p>
+          <p className="detailSection__paragraph">
+            Especie: {translateSpecies(props.characterFound.species)}
+          </p>
+          <p className="detailSection__paragraph">
+            {`Género: ${
+              props.characterFound.gender === 'female' ? 'Mujer' : 'Hombre'
+            }`}
+          </p>
+          <p className="detailSection__paragraph">
+            {`Casa: ${
+              props.characterFound.house === ''
+                ? 'Sin Casa'
+                : props.characterFound.house
+            }`}
+          </p>
           <img
-            className="detailSection-img"
-            src={props.changeImage(props.characterFound.image)}
-            alt={`Foto de ${props.characterFound.name}`}
-            title={`Foto de ${props.characterFound.name}`}
+            className="detailSection__house"
+            src={getHouse(props.characterFound.house)}
+            alt={`Foto de ${props.characterFound.house}`}
+            title={`Foto de ${props.characterFound.house}`}
           ></img>
         </div>
-        <h4 className="detailSection__name">{props.characterFound.name}</h4>
-        <p className="detailSection__paragraph">
-          Estatus:{deadOrAlive(props.characterFound.alive)}
-        </p>
-        <p className="detailSection__paragraph">
-          Especie:{translateSpecies(props.characterFound.species)}
-        </p>
-        <p className="detailSection__paragraph">
-          {`Género:${
-            props.characterFound.gender === 'female' ? 'Mujer' : 'Hombre'
-          }`}
-        </p>
-        <p className="detailSection__paragraph">
-          {`Género:${
-            props.characterFound.house === ''
-              ? 'Sin Casa'
-              : props.characterFound.house
-          }`}
-        </p>
-        <img
-          className="detailSection__house"
-          src={getHouse(props.characterFound.house)}
-          alt={`Foto de ${props.characterFound.house}`}
-          title={`Foto de ${props.characterFound.house}`}
-        ></img>
       </section>
-      ;
     </>
   );
 };

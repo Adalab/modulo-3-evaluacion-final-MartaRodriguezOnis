@@ -39,17 +39,19 @@ function App() {
 
   // API
   useEffect(() => {
-    getDataApi().then((dataApi) => {
-      setDataCharacters(dataApi);
-    });
-  }, []);
+    if (dataCharacters.length === 0) {
+      getDataApi().then((dataApi) => {
+        ls.set('dataCharactersLS', dataApi);
+        setDataCharacters(dataApi);
+      });
+    }
+  }, [dataCharacters]);
 
   // LOCAL-STORAGE
   useEffect(() => {
-    ls.set('dataCharactersLS', dataCharacters);
     ls.set('filterNameLS', filterName);
     ls.set('detailURL_LS', detailURL);
-  }, [dataCharacters, filterName, detailURL]);
+  }, [filterName, detailURL]);
 
   // MANEJADORAS  EVENTOS
   const handleFilterByName = (value) => {
