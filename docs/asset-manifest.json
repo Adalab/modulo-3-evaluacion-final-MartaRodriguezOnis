@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.78fec0ae.css",
-    "main.js": "./static/js/main.9b2bb090.js",
+    "main.css": "./static/css/main.476cbc64.css",
+    "main.js": "./static/js/main.dd946f78.js",
     "static/media/defaultImage.png": "./static/media/defaultImage.caf49d0494891b4b645e.png",
     "static/media/sorting-hat.png": "./static/media/sorting-hat.d751c9d088a677c2238a.png",
     "static/media/Houseless.jpg": "./static/media/Houseless.0ada4647dfc5fd290004.jpg",
@@ -10,12 +10,13 @@
     "static/media/logo.png": "./static/media/logo.7874b9e040eb34970602.png",
     "static/media/HouseRavenclaw.jpg": "./static/media/HouseRavenclaw.c69639263a923a85bf1f.jpg",
     "static/media/HouseHufflepuff.jpg": "./static/media/HouseHufflepuff.9fdbbf559df60723ea24.jpg",
+    "static/media/wand.png": "./static/media/wand.fb77f8bc674830892933.png",
     "index.html": "./index.html",
-    "main.78fec0ae.css.map": "./static/css/main.78fec0ae.css.map",
-    "main.9b2bb090.js.map": "./static/js/main.9b2bb090.js.map"
+    "main.476cbc64.css.map": "./static/css/main.476cbc64.css.map",
+    "main.dd946f78.js.map": "./static/js/main.dd946f78.js.map"
   },
   "entrypoints": [
-    "static/css/main.78fec0ae.css",
-    "static/js/main.9b2bb090.js"
+    "static/css/main.476cbc64.css",
+    "static/js/main.dd946f78.js"
   ]
 }
