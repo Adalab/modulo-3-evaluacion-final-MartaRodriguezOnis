@@ -1,6 +1,8 @@
 import CharacterCard from './CharacterCard';
 import '../../styles/CharacterList.scss';
 import wand from '../../images/wand.png';
+import defaultImage from '../../images/defaultImage.png';
+import PropTypes from 'prop-types';
 
 const CharacterList = (props) => {
   const renderCharacters = () => {
@@ -51,4 +53,20 @@ const CharacterList = (props) => {
   );
 };
 
+CharacterList.defaultProps = {
+  charactersFilters: {
+    name: '',
+    species: '',
+    image: { defaultImage },
+    house: '',
+    gender: '',
+    alive: '',
+    id: '',
+  },
+};
+CharacterList.propTypes = {
+  charactersFilters: PropTypes.array,
+  getInputName: PropTypes.string,
+  changeImage: PropTypes.func,
+};
 export default CharacterList;

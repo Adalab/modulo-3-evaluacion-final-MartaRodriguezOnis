@@ -1,5 +1,7 @@
 import '../../styles/CharacterCard.scss';
 import { Link } from 'react-router-dom';
+import defaultImage from '../../images/defaultImage.png';
+import PropTypes from 'prop-types';
 
 const CharacterCard = (props) => {
   const handleLink = (ev) => {
@@ -26,5 +28,18 @@ const CharacterCard = (props) => {
     </li>
   );
 };
-
+CharacterCard.defaultProps = {
+  charactersFilters: {
+    name: '',
+    species: '',
+    image: { defaultImage },
+    house: '',
+  },
+};
+CharacterCard.propTypes = {
+  charactersFilters: PropTypes.object,
+  changeImage: PropTypes.func,
+  getInputName: PropTypes.func,
+  handleDetailURL: PropTypes.func,
+};
 export default CharacterCard;

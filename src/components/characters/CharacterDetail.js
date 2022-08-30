@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
-
 import HouseGryffindor from '../../images/HouseGryffindor.jpg';
 import HouseSlytherin from '../../images/HouseSlytherin.jpg';
 import HouseRavenclaw from '../../images/HouseRavenclaw.jpg';
 import HouseHufflepuff from '../../images/HouseHufflepuff.jpg';
 import Houseless from '../../images/Houseless.jpg';
 import '../../styles/CharacterDetail.scss';
+import PropTypes from 'prop-types';
+import defaultImage from '../../images/defaultImage.png';
 
 const CharacterDetail = (props) => {
   const getHouse = (value) => {
@@ -111,6 +112,9 @@ const CharacterDetail = (props) => {
             }`}
           </p>
           <p className="detailSection__paragraph">
+            {`Otros nombres: ${props.characterFound.alternate_names}`}
+          </p>
+          <p className="detailSection__paragraph">
             {`Casa: ${
               props.characterFound.house === ''
                 ? 'Sin Casa'
@@ -127,5 +131,21 @@ const CharacterDetail = (props) => {
       </section>
     </>
   );
+};
+CharacterDetail.defaultProps = {
+  charactersFound: {
+    name: '',
+    species: '',
+    house: '',
+    gender: '',
+    alive: '',
+    image: { defaultImage },
+    id: '',
+    alternate_names: '',
+  },
+};
+CharacterDetail.propTypes = {
+  charactersFound: PropTypes.object,
+  getHouse: PropTypes.func,
 };
 export default CharacterDetail;

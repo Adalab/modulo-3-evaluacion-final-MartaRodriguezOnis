@@ -21,22 +21,6 @@ function App() {
   const [filterGender, setFilterGender] = useState('All');
   const [detailURL, setDetailURL] = useState(ls.get('detailURL_LS', {}));
 
-  // ver atributos
-  // const allSpecies = [
-  //   ...new Set(dataCharacters.map((character) => character.species)),
-  // ];
-  // console.log(allSpecies);
-
-  // const allGender = [
-  //   ...new Set(dataCharacters.map((character) => character.gender)),
-  // ];
-  // console.log(allGender);
-
-  // const allStatus = [
-  //   ...new Set(dataCharacters.map((character) => character.alive)),
-  // ];
-  // console.log(allStatus);
-
   // API
   useEffect(() => {
     if (dataCharacters.length === 0) {
@@ -89,16 +73,7 @@ function App() {
       return filterGender === 'All' ? true : character.gender === filterGender;
     });
 
-  // obtener el NAME del usuario  (No hay id)
-  // const { pathname } = useLocation();
-  // const dataPath = matchPath('/character/:characterName', pathname);
-
-  // const characterName =
-  //   dataPath !== null ? dataPath.params.characterName : null;
-  // const characterFound = charactersFilters.find((character) => {
-  //   return character.name === characterName;
-  // });
-
+  //RUTAS
   const { pathname } = useLocation();
   const dataPath = matchPath('/character/:characterId', pathname);
 
@@ -106,7 +81,7 @@ function App() {
   const characterFound = dataCharacters.find((character) => {
     return character.id === parseInt(characterId);
   });
-  console.log(characterFound);
+
   return (
     <>
       <Header />

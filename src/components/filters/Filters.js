@@ -3,6 +3,7 @@ import FilterByName from './FilterByName';
 import FilterByGender from './FilterByGender';
 import ResetButton from '../ResetButton';
 import '../../styles/Filters.scss';
+import PropTypes from 'prop-types';
 
 const Filters = (props) => {
   const handleSubmit = (ev) => {
@@ -30,5 +31,13 @@ const Filters = (props) => {
       />
     </form>
   );
+};
+Filters.propTypes = {
+  handleFilterByName: PropTypes.func,
+  filterName: PropTypes.string.isRequired,
+  handleFilterByHouse: PropTypes.func,
+  filterHouse: PropTypes.string.isRequired,
+  handleFilterByGender: PropTypes.func,
+  filterGender: PropTypes.string.isRequired,
 };
 export default Filters;

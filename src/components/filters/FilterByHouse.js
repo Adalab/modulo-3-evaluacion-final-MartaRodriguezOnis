@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 const FilterByHouse = (props) => {
   const handleChange = (ev) => {
     props.handleFilterByHouse(ev.currentTarget.value);
@@ -23,5 +24,14 @@ const FilterByHouse = (props) => {
       </select>
     </>
   );
+};
+
+FilterByHouse.defaultProps = {
+  filterHouse: 'Gryffindor',
+};
+
+FilterByHouse.propTypes = {
+  handleFilterByHouse: PropTypes.func,
+  filterHouse: PropTypes.string.isRequired,
 };
 export default FilterByHouse;

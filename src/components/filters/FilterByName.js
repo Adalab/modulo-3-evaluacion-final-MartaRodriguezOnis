@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 const FilterByName = (props) => {
   const handleChange = (ev) => {
     props.handleFilterByName(ev.currentTarget.value);
@@ -20,5 +21,14 @@ const FilterByName = (props) => {
       ></input>
     </>
   );
+};
+
+FilterByName.defaultProps = {
+  filterName: '',
+};
+
+FilterByName.propTypes = {
+  handleFilterByName: PropTypes.func,
+  filterName: PropTypes.string.isRequired,
 };
 export default FilterByName;

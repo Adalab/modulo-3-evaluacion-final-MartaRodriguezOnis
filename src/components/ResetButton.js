@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 const ResetButton = (props) => {
   const handleReset = (ev) => {
     ev.preventDefault();
@@ -13,4 +14,9 @@ const ResetButton = (props) => {
   );
 };
 
+ResetButton.propTypes = {
+  handleFilterByName: PropTypes.func,
+  handleFilterByHouse: PropTypes.func,
+  handleFilterByGender: PropTypes.func,
+};
 export default ResetButton;
