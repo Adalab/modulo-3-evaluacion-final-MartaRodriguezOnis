@@ -10,7 +10,6 @@
 }
 .paragraph-section {
   position: relative;
-
   width: 100%;
   color: rgb(4, 4, 4);
   padding: 3px;
@@ -36,7 +35,11 @@
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   @media all and (min-width: 768px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 50px;
+    row-gap: 130px;
+    margin-left: 30px;
+    margin-right: 30px;
   }
 }
 
