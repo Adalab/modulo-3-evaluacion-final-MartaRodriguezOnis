@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.4cc2c9eb.css",
-    "main.js": "./static/js/main.c06a0c15.js",
+    "main.js": "./static/js/main.0d22e243.js",
     "static/media/defaultImage.png": "./static/media/defaultImage.caf49d0494891b4b645e.png",
     "static/media/sorting-hat.png": "./static/media/sorting-hat.d751c9d088a677c2238a.png",
     "static/media/Houseless.jpg": "./static/media/Houseless.0ada4647dfc5fd290004.jpg",
@@ -13,10 +13,10 @@
     "static/media/wand.png": "./static/media/wand.fb77f8bc674830892933.png",
     "index.html": "./index.html",
     "main.4cc2c9eb.css.map": "./static/css/main.4cc2c9eb.css.map",
-    "main.c06a0c15.js.map": "./static/js/main.c06a0c15.js.map"
+    "main.0d22e243.js.map": "./static/js/main.0d22e243.js.map"
   },
   "entrypoints": [
     "static/css/main.4cc2c9eb.css",
-    "static/js/main.c06a0c15.js"
+    "static/js/main.0d22e243.js"
   ]
 }
