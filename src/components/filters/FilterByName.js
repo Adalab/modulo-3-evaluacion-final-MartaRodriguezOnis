@@ -17,6 +17,9 @@ const FilterByName = (props) => {
         id="name"
         value={props.filterName}
         onChange={handleChange}
+        onKeyPress={(e) => {
+          e.key === 'Enter' && e.preventDefault();
+        }}
         placeholder=" Ej: Lucius Malfoy"
       ></input>
     </>
